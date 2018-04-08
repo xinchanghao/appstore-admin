@@ -1,0 +1,91 @@
+
+<!--包含头部模版header-->
+<include file="Public/header" />
+
+<!--包含左侧菜单模版header-->
+<include file="Public/left" />
+
+<div class="content">
+
+    <div class="header">
+
+        <h1 class="page-title">Home</h1>
+    </div>
+
+    <ul class="breadcrumb">
+        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+        <li class="active"><a href="users.html">添加版本</a> <span class="divider">/</span></li>
+    </ul>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <div class="btn-toolbar">
+                <button class="btn btn-primary" onclick="javascript:document.getElementById('versioninfo').submit();"><i class="icon-save"></i> 提交</button>
+                <div class="btn-group">
+                </div>
+            </div>
+            <div class="well">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab">版本信息</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="home">
+                        <form id="versioninfo" method="post" action="<?php echo U('Version/modify',array('AppID'=>$data['AppID'],'VersionID'=>$data['VersionID']));?>">
+                            <label>AppID</label>
+                            <input type="text" value="{$data['AppID']}" name="AppID" class="input-xlarge" value="{$data['AppID']}" readonly="readonly">
+                            <label>版本ID</label>
+                            <input type="text" value="{$data['VersionID']}" name="VersionID" class="input-xlarge" value="{$data['VersionID']}" readonly="readonly">
+                            <label>版本名</label>
+                            <input type="text" value="{$data['VersionName']}" name="VersionName" class="input-xlarge" maxlength="11">
+                            <label>更新时间</label>
+                            <input type="text" value="{$data['Time']}" name="Time" class="input-xlarge">
+                            <label>更新日志</label>
+                            <textarea name="Log" rows="3" class="input-xlarge">{$data['Log']}</textarea>
+                            <label>备注</label>
+                            <textarea name="Note" rows="3" class="input-xlarge">{$data['Note']}</textarea>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">Delete Confirmation</h3>
+                </div>
+                <div class="modal-body">
+
+                    <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+
+            <footer>
+                <hr>
+                <p class="pull-right">Collect from <a href="#" target="_blank">AppStore</a></p>
+                <p>&copy; 2016 <a href="#" target="_blank">Xinhao</a></p>
+            </footer>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="__PUBLIC__/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+
+</body>
+</html>
+
+

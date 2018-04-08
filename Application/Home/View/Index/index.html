@@ -1,0 +1,73 @@
+<include file="Public/header"/>
+
+<div id="bd">
+    <div class="bdr">
+        <div id="side">
+            <ul id="category-type">
+                <li id="myextensions"><a href="javascript:;"><img
+                        src="http://p3.qhimg.com/d/360browser/20121228/icon09.png">已安装扩展<span
+                        id="myext_count"></span></a></li>
+            </ul>
+        </div>
+        <div id="content" class="clearfix">
+            <div class="content-m fl">
+                <div id="slides" class="slides">
+                    <div class="slides-box">
+                        <ul id="slideview">
+                        </ul>
+                    </div>
+                </div>
+                <div class="ext-lists">
+                    <div id="app-container">
+                        <h3 id="header-category"></h3>
+                        <ul class="app-list">
+                        </ul>
+                        <h3 id="header-search"><span></span> 的搜索结果</h3>
+                        <ul class="search-app-list">
+                        </ul>
+                    </div>
+                    <div class="loading-tip" style="width: 100%; height: 180px; text-align: center; ">
+                        <div class="spinner"
+                             style="width: 232px;height: 32px;background: url('http://w.qhimg.com/images/v2/chrome/2012/03/30/loading.gif') no-repeat;display: inline-block;line-height:34px;color:#888;">
+                            正在搜索中，请稍候...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-r fr">
+                <div class="search">
+                    <form id="search-form">
+                        <input type="text" name="q" maxlength="30">
+                        <button type="submit">搜索</button>
+                    </form>
+                    <!--<p>搜索热词：<a href="javascript:;">游戏工具</a><a href="javascript:;">购物比价</a></p>-->
+                </div>
+                <div class="list-box">
+                    <h2>本周热门<a href="javascript:;" class="sort" sort="download">更多</a></h2>
+                    <ul id="topview-download">
+                    </ul>
+                </div>
+                <div class="list-box">
+                    <h2>最受欢迎<a href="javascript:;" class="sort" sort="hot">更多</a></h2>
+                    <ul id="topview-hot">
+                    </ul>
+                </div>
+                <div class="list-box">
+                    <h2>最新入库<a href="javascript:;" class="sort" sort="lastupdate">更多</a></h2>
+                    <ul id="topview-lastupdate">
+                    </ul>
+                </div>
+                <div class="link-box">
+                    <li><a href="http://open.chrome.360.cn/" target="_blank"><img
+                            src="http://p3.qhimg.com/d/360browser/20121228/icon08.png" align="absmiddle">开发者中心</a></li>
+                    <li class="l2"><a href="https://ext.chrome.360.cn/webstore/skip" target="_blank"><img
+                            src="http://p3.qhimg.com/d/360browser/20121228/icon_chrome.png" align="absmiddle">Chrome网上应用店</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="go-top" href="javascript:;"><span>返回顶部</span></a>
+</div>
+
+<include file="Public/foot"/>

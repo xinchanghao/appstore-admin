@@ -1,0 +1,44 @@
+
+    <div class="sidebar-nav">
+        <form class="search form-inline">
+            <input type="text" placeholder="搜索...">
+        </form>
+
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>仪表盘</a>
+        <ul id="dashboard-menu" class="nav nav-list collapse<?php if(CONTROLLER_NAME=='Index') echo ' in';?>">
+            <li><a href="<?php echo U('Index/index')?>">首页</a></li>
+            <li ><a href="help.html">公司政策</a></li>
+            <li ><a href="help.html">关于我们</a></li>
+        </ul>
+        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>App管理<i class="icon-chevron-up"></i></a>
+        <ul id="error-menu" class="nav nav-list collapse<?php if(CONTROLLER_NAME=='App') echo ' in';?>">
+            <if condition="$isAdmin">
+                <li ><a href="<?php echo U('App/all')?>">所有App列表</a></li>
+            </if>
+            <li ><a href="<?php echo U('App/index')?>">我的App列表</a></li>
+            <li ><a href="<?php echo U('App/add')?>">App添加</a></li>
+            <if condition="$isAdmin">
+                <li ><a href="<?php echo U('App/review')?>">App审核</a></li>
+            </if>
+        </ul>
+        <if condition="$isAdmin">
+            <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>用户管理<span class="label label-info">+3</span></a>
+            <ul id="accounts-menu" class="nav nav-list collapse<?php if(CONTROLLER_NAME=='User') echo ' in';?>">
+                <li ><a href="<?php echo U('User/index')?>">用户列表</a></li>
+            </ul>
+        </if>
+        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>我的账户</a>
+        <ul id="legal-menu" class="nav nav-list collapse<?php if(CONTROLLER_NAME=='User') echo ' in';?>">
+            <!--<li ><a href="<?php echo U('Public/login')?>">登录</a></li>
+            <li ><a href="sign-up.html">注册</a></li>-->
+            <!--<li><a href="<?php echo U('User/index')?>">我的资料</a></li>-->
+            <li><a href="<?php echo U('User/info')?>">我的资料</a></li>
+            <li ><a href="<?php echo U('User/modify')?>">修改信息</a></li>
+
+        </ul>
+        <a href="<?php echo U('Public/email')?>" class="nav-header" ><i class="icon-comment"></i>联系我们</a>
+        <a href="<?php echo U('Public/help')?>" class="nav-header" ><i class="icon-question-sign"></i>帮助</a>
+
+    </div>
+    
+

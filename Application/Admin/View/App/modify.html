@@ -1,0 +1,115 @@
+
+<!--包含头部模版header-->
+<include file="Public/header" />
+
+<!--包含左侧菜单模版header-->
+<include file="Public/left" />
+
+
+
+
+<div class="content">
+        
+        <div class="header">
+            
+            <h1 class="page-title">App管理</h1>
+        </div>
+        
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+            <li class="active"><a href="appmodify.html">APP编辑</a> <span class="divider">/</span></li>
+        </ul>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                    
+<div class="btn-toolbar">
+    <button class="btn btn-primary" onclick="document.getElementById('modifyform').submit();"><i class="icon-save"></i> 提交</button>
+  <div class="btn-group">
+  </div>
+</div>
+<div class="well">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">应用信息</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+    <form id="modifyform" method="post" action="<?php echo U('App/modifyok')?>"
+        <label>应用ID</label>
+        <input type="text" value="{$data['AppID']}" name="AppID" class="input-xlarge" maxlength="11" readonly>
+        <label>应用名</label>
+        <input type="text" value="{$data['AppName']}" name="AppName" class="input-xlarge">
+        <label>用户ID</label>
+        <input type="text" value="{$data['UserID']}" name="UserID" class="input-xlarge" maxlength="11">
+        <label>内部名</label>
+        <input type="text" value="{$data['SymbolName']}" name="SymbolName" class="input-xlarge">
+        <label>分类</label>
+        <select name="CategotyID" id="CategoryID" value="{$data['CategoryID']}" class="input-xlarge">
+          <option value="12.0">聊天</option>
+          <option value="11.0">视频</option>
+          <option value="10.0">浏览器</option>
+          <option value="9.0">游戏</option>
+          <option value="8.0">音乐</option>
+          <option value="7.0">图像</option>
+          <option value="6.0">办公</option>
+          <option value="5.0">插件</option>
+          <option value="4.0">编程</option>
+          <option value="3.5">输入法</option>
+          <option value="3.0">安全杀毒</option>
+          <option value="2.0">系统工具</option>
+          <option value="1.0">其他</option>
+        </select>
+        <!--<label>图标</label>-->
+        <!--<input type="file" value="{$data['Pic']}" name="Pic" class="input-xlarge">-->
+         <label>描述</label>
+        <textarea value="{$data['AppDetail']}" rows="3" name="AppDetail" class="input-xlarge">{$data['AppDetail']}</textarea>
+    </form>
+      </div>
+  </div>
+
+</div>
+
+<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Delete Confirmation</h3>
+  </div>
+  <div class="modal-body">
+    
+    <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+  </div>
+</div>
+
+
+                    
+                    <footer>
+                        <hr>
+                        
+                        <p class="pull-right">Collect from <a href="#" target="_blank">AppStore</a></p>
+                        
+
+                        <p>&copy; 2016 <a href="#" target="_blank">Xinhao</a></p>
+                    </footer>
+                    
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="__PUBLIC__/lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $("[rel=tooltip]").tooltip();
+        $(function() {
+            $('.demo-cancel-click').click(function(){return false;});
+        });
+    </script>
+    
+  </body>
+</html>
+
+

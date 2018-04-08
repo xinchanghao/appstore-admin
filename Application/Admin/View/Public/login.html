@@ -1,0 +1,62 @@
+<!--包含头部模版header-->
+<include file="Public/header2" />
+
+<div class="row-fluid">
+    <div class="dialog">
+        <div class="block">
+            <p class="block-heading">登录</p>
+            <div class="block-body">
+                <form id='form_login' action="<?php echo U('Public/deallogin')?>" method="post">
+                    <label>用户名</label>
+                    <input type="text" id="username" class="span12" name="username" maxlength="30">
+                    <label>密码</label>
+                    <input type="password" id="password" class="span12" name="password" maxlength="45">
+                    <input type="submit" class="btn btn-primary pull-right" value="登录"></input>
+                    <label class="remember-me"><input type="checkbox" name="remember"> 记住密码</label>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+        <p class="pull-right" style=""><a href="<?php echo U('Public/register')?>" target="blank">立即注册</a></p>
+        <p><a href="reset-password.html">忘记密码?</a></p>
+    </div>
+</div>
+
+
+    
+
+
+    <script src="__PUBLIC__/lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $("[rel=tooltip]").tooltip();
+        $(function() {
+            $('.demo-cancel-click').click(function(){return false;});
+        });
+    </script>
+    
+  </body>
+</html>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("form").submit(function (){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if (username == '')
+            {
+                alert("帐号不能为空!");
+                $("#name").focus();
+                return false;
+            }
+            else if(password == '')
+            {
+                alert("密码不能为空!");
+                $("#password").focus();
+                return false;
+            }
+            else
+                return true;
+        });
+    });
+</script>

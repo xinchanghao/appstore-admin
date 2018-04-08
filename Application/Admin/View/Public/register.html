@@ -1,0 +1,43 @@
+<!--包含头部模版header-->
+<include file="Public/header2" />
+
+<div class="row-fluid">
+    <div class="dialog">
+        <div class="block">
+            <p class="block-heading">注册</p>
+            <div class="block-body">
+                <form id="regform" action="<?php echo U('Public/dealreg'); ?>" method="post">
+                    <label>昵称</label>
+                    <input type="text" class="span12" name="Name">
+                    <label>Email地址</label>
+                    <input type="text" class="span12" name="Email">
+                    <label>用户名</label>
+                    <input type="text" class="span12" name="Username">
+                    <label>密码</label>
+                    <input type="password" class="span12" name="Password">
+                    <a onclick="document.getElementById('regform').submit();" class="btn btn-primary pull-right">注册</a>
+                    <label class="remember-me"><a href="<?php echo U('Public/login'); ?>">我有账号，立即登录</a></label>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+        <!--<p><a href="privacy-policy.html">Privacy Policy</a></p>-->
+    </div>
+</div>
+
+
+    
+
+
+    <script src="__PUBLIC__/lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $("[rel=tooltip]").tooltip();
+        $(function() {
+            $('.demo-cancel-click').click(function(){return false;});
+        });
+    </script>
+    
+  </body>
+</html>
+
+
